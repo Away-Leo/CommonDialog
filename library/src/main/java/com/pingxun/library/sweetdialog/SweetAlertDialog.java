@@ -15,6 +15,7 @@ import android.view.animation.Transformation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pingxun.library.R;
@@ -51,6 +52,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     private ImageView mCustomImage;
     private Button mConfirmButton;
     private Button mCancelButton;
+    private LinearLayout cancel_buttonLine;
+    private LinearLayout confirm_buttonLine;
     private ProgressHelper mProgressHelper;
     private FrameLayout mWarningFrame;
     private OnSweetClickListener mCancelClickListener;
@@ -154,6 +157,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mWarningFrame = (FrameLayout)findViewById(R.id.warning_frame);
         mConfirmButton = (Button)findViewById(R.id.confirm_button);
         mCancelButton = (Button)findViewById(R.id.cancel_button);
+        confirm_buttonLine=(LinearLayout)findViewById(R.id.confirm_buttonLine);
+        cancel_buttonLine=(LinearLayout)findViewById(R.id.cancel_buttonLine);
         mProgressHelper.setProgressWheel((ProgressWheel)findViewById(R.id.progressWheel));
         mConfirmButton.setOnClickListener(this);
         mCancelButton.setOnClickListener(this);
@@ -281,8 +286,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
 
     public SweetAlertDialog showCancelButton (boolean isShow) {
         mShowCancel = isShow;
-        if (mCancelButton != null) {
-            mCancelButton.setVisibility(mShowCancel ? View.VISIBLE : View.GONE);
+        if (cancel_buttonLine != null) {
+            cancel_buttonLine.setVisibility(mShowCancel ? View.VISIBLE : View.GONE);
         }
         return this;
     }

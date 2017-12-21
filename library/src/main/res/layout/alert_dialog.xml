@@ -142,19 +142,32 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:gravity="center">
+        <LinearLayout
+            android:id="@+id/cancel_buttonLine"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/cancel_button"
+                style="@style/dialog_blue_button"
+                android:background="@drawable/gray_button_background"
+                android:layout_marginRight="10dp"
+                android:text="@string/dialog_cancel" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/confirm_buttonLine"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/confirm_button"
+                style="@style/dialog_blue_button"
+                android:text="@string/dialog_ok" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/cancel_button"
-            style="@style/dialog_blue_button"
-            android:background="@drawable/gray_button_background"
-            android:layout_marginRight="10dp"
-            android:visibility="gone"
-            android:text="@string/dialog_cancel" />
-
-        <Button
-            android:id="@+id/confirm_button"
-            style="@style/dialog_blue_button"
-            android:text="@string/dialog_ok" />
     </LinearLayout>
 </LinearLayout>
